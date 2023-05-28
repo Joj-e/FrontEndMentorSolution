@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body{
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100%;
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 30%;
+    background-color:  hsl(0, 0%, 100%);
+    z-index: -1;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.card-container{
+    position: relative;
+    height: 100vh;
+}
+
+.card-container .front-card-div{
+    position: relative;
+    width: 325px;
+    height: 300px;
+    top: 100px;
+    left: 100px;
+    background: url(../images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: hsl(0, 0%, 100%);
+    padding:  6.5rem 2.2rem 2rem 1.9rem;
+}
+
+.card-container .front-card-div .flex-display{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card-container .front-card-div .card-number-display{
+    font-size: 1.4rem;
+}
+
+.card-container .front-card-div .flex-display p{
+    font-size: .8rem;
+}
+
+.card-container .front-card-div::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-image: url(../images/card-logo.svg);
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+}
+
+.card-container .back-card-div{
+    position: relative;
+    width: 325px;
+    height: 300px;
+    top: 20px;
+    left: 175px;
+    background: url(../images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20px;
+    color: #fff;
+}
+
+.card-container .back-card-div .cvc-display{
+    position: absolute;
+    top: 80px;
+    right: 35px;
+    font-size: .8rem;
+}
+
+form{
+    display: grid;
+    justify-content: start;
+    max-width: 50%;
+    gap: 10px;
+}
+
+form label{
+    text-transform: uppercase;
+    color: hsl(278, 68%, 11%);
+    font-size: .8rem;
+}
+
+form input{
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid hsl(270, 3%, 87%);
+    margin-bottom: 10px;
+}
+
+form .expiration-date{
+    width: 45%;
+    gap: 5px;
+}
+
+form .flex {
+    display: flex;
+    align-items: center;
+}
+  
+form .date-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+form .cvc-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+form input::placeholder{
+    color: hsl(270, 3%, 87%);
+}
+
+form button{
+    padding: 10px;
+    border-radius: 5px;
+    background:hsl(278, 68%, 11%);
+    border: none;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.form-container .thank-you-div{
+    background-image: url(../images/icon-complete.svg);
+    background-repeat: no-repeat;
+    background-position: center 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 7rem;
+}
+
+.form-container .thank-you-div #thank-you-header{
+    color: hsl(278, 68%, 11%);
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.form-container .thank-you-div p{
+    color:hsl(270, 3%, 87%);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.form-container .thank-you-div #continue{
+    padding: 10px;
+    border-radius: 5px;
+    background:hsl(278, 68%, 11%);
+    border: none;
+    color: hsl(0, 0%, 100%);
+    width: 75%;
+    cursor: pointer;
+}
+
+.form-container .hidden{
+    display: none;
+}
+
+@media (max-width: 375px){
+    body{
+        background-image: url(../images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: initial;
+        z-index: 0;
+    }
+    main{
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    .card-container{
+        height: fit-content;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .card-container .front-card-div{
+        left: 10px;
+        top: 120px;
+        z-index: 1;
+    }
+    .card-container .back-card-div{
+        position: absolute;
+        left: 30px;
+        z-index: 0;
+    }
+    form{
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    form label{
+        font-size: .7rem;
+    }
+    form input{
+        align-self: center;
+        margin-bottom: 5px;
+    }
+    form input::placeholder{
+        font-size: .7rem;
+    }
+    .flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-container .thank-you-div{
+        padding: 7rem 1rem;
+    }
+    .form-container .thank-you-div #thank-you-header{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .form-container .thank-you-div p{
+        text-align: center;
+        font-size: 1rem;
+        color: hsl(279, 6%, 55%);
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        background-size: 40%;
+    }
+    .card-container .front-card-div{
+        width: 70%;
+        left: 50px;
+    }
+    .card-container .front-card-div .card-number-display{
+        font-size: 1.1rem;
+    }
+    .card-container .front-card-div .flex-display{
+        margin-top: 1px;
+    }
+    .card-container .back-card-div{
+        width: 70%;
+        left: 90px;
+    }
+    .card-container .back-card-div .cvc-display{
+        top: 65px;
+    }
+    form{
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    form label{
+        font-size: .7rem;
+    }
+    .flex .date-container .date-input .expiration-date{
+        width: 50%;
+    }
+    .flex .cvc-container{
+        width: 50%;
+    }
+    .date-input{
+        display: flex;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+}
+
+@media (max-width: 1080px){
+    .card-container .front-card-div{
+       top: 40px;
+    }
+    .card-container .back-card-div{
+        position: absolute;
+        top: 250px;
+    }
+    form{
+        width: 100%;
+        max-width: 500px;
+        padding: 0 60px;
+        margin: 0 auto;
+    }
+}
