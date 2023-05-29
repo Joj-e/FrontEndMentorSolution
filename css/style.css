@@ -292,7 +292,7 @@ form button{
 
 @media (max-width: 1080px){
     .card-container .front-card-div{
-       top: 40px;
+       top: 20px;
     }
     .card-container .back-card-div{
         position: absolute;
