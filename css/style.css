@@ -15,6 +15,7 @@ body{
     background-size: 30%;
     background-color:  hsl(0, 0%, 100%);
     z-index: -1;
+    overflow-x: hidden;
 }
 
 main{
@@ -181,7 +182,7 @@ form button{
     display: none;
 }
 
-@media (max-width: 375px){
+@media (min-width: 375px) and (max-width: 479px){
     body{
         background-image: url(../images/bg-main-mobile.png);
         background-repeat: no-repeat;
@@ -196,6 +197,7 @@ form button{
         height: auto;
     }
     .card-container{
+        padding: 20px;
         height: fit-content;
         width: 100%;
         margin-bottom: 10px;
@@ -207,7 +209,8 @@ form button{
     }
     .card-container .back-card-div{
         position: absolute;
-        left: 30px;
+        left: 40px;
+        top: 45px;
         z-index: 0;
     }
     form{
@@ -246,61 +249,60 @@ form button{
     }
 }
 
-@media (min-width: 376px) and (max-width: 768px){
+@media (min-width: 480px) and (max-width: 576px){
     body{
-        background-size: 40%;
-    }
-    .card-container .front-card-div{
-        width: 80%;
-        left: 50px;
-    }
-    .card-container .front-card-div .card-number-display{
-        font-size: 1.1rem;
-    }
-    .card-container .front-card-div .flex-display{
-        margin-top: 1px;
-    }
-    .card-container .back-card-div{
-        width: 80%;
-        left: 90px;
-    }
-    .card-container .back-card-div .cvc-display{
-        top: 65px;
-    }
-    form{
+        background-image: url(../images/bg-main-mobile.png);
+        background-attachment: initial;
+        background-size: contain;
         width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
     }
-    form label{
-        font-size: .7rem;
-    }
-    .flex .date-container .date-input .expiration-date{
-        width: 50%;
-    }
-    .flex .cvc-container{
-        width: 50%;
-    }
-    .date-input{
-        display: flex;
-        gap: 5px;
-        justify-content: space-between;
+    main{
+        grid-template-columns: 1fr;
         align-items: center;
+        justify-content: center;
+        height: auto;
+        gap: 50px;
     }
-    
-}
-
-@media (min-width: 769px) and (max-width: 1080px){
+    .card-container{
+        padding: 0 40px;
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 60px;
+    }
     .card-container .front-card-div{
-       top: 20px;
+        left: 40px;
+        top: 150px;
+        z-index: 1;
+        margin: 0 auto;
     }
     .card-container .back-card-div{
         position: absolute;
-        top: 250px;
+        top: 50px;
+        left: 70px;
+        z-index: 0;
     }
     form{
+        margin: 0 auto;
         width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1080px){
+    .card-container .front-card-div{
+       top: 20px;
+       left: 60px;
+    }
+    .card-container .back-card-div{
+        position: absolute;
+        top: 230px;
+        left: 90px;
+    }
+    form{
         max-width: 500px;
+        width: 100%;
         padding: 0 60px;
         margin: 0 auto;
     }
