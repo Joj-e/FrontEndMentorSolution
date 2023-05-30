@@ -246,12 +246,12 @@ form button{
     }
 }
 
-@media (max-width: 768px){
+@media (min-width: 376px) and (max-width: 768px){
     body{
         background-size: 40%;
     }
     .card-container .front-card-div{
-        width: 70%;
+        width: 80%;
         left: 50px;
     }
     .card-container .front-card-div .card-number-display{
@@ -261,7 +261,7 @@ form button{
         margin-top: 1px;
     }
     .card-container .back-card-div{
-        width: 70%;
+        width: 80%;
         left: 90px;
     }
     .card-container .back-card-div .cvc-display{
@@ -290,7 +290,7 @@ form button{
     
 }
 
-@media (max-width: 1080px){
+@media (min-width: 769px) and (max-width: 1080px){
     .card-container .front-card-div{
        top: 20px;
     }
