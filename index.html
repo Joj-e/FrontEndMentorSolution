@@ -20,15 +20,15 @@
     <section class="card-container">
       <div class="front-card-div">
         <div class="card-content">
-          <p class="card-number-display">0000 0000 0000 0000</p>
+          <p id="card-number-display">0000 0000 0000 0000</p>
           <div class="flex-display">
-            <p class="holder-name-display">Jane Appleseed</p>
-            <p class="exp-date-display">00/00</p>
+            <p id="holder-name-display">Jane Appleseed</p>
+            <p id="exp-date-display">00/00</p>
           </div>
         </div>
       </div>
       <div class="back-card-div">
-        <p class="cvc-display">123</p>
+        <p id="cvc-display">123</p>
       </div>
     </section>
 
@@ -40,16 +40,16 @@
         <p id="name-error-message"></p>
         <label for="card-number">Card Number</label>
         <input type="text" id="card-number" class="card-number" name="card-number"
-          placeholder="e.g. 1234 5678 9123 0000" oninput="inputNumber()">
+          placeholder="e.g. 1234 5678 9123 0000" oninput="inputNumber(event)">
         <p id="number-error-message"></p>
         
         <div class="flex">
           <div class="date-container">
             <label for="expiration-date">Exp. Date(MM/YY)</label>
             <div class="date-input">
-              <input type="text" class="expiration-date" id="expiration-month" name="expiration-date" placeholder="MM" oninput="inputMonth()">
+              <input type="text" class="expiration-date" id="expiration-month" name="expiration-date" placeholder="MM" oninput="yearMonthDisplay()">
               <span> </span>
-              <input type="text" class="expiration-date" id="expiration-year" name="expiration-date" placeholder="YY" oninput="inputYear()">
+              <input type="text" class="expiration-date" id="expiration-year" name="expiration-date" placeholder="YY" oninput="yearMonthDisplay()">
               <p id="exp-error-message"></p>
             </div>
           </div>
@@ -60,7 +60,7 @@
             <p id="cvc-error-message"></p>
           </div>
         </div>
-        <button aria-label="Confirm Button" type="submit">Confirm</button>
+        <button aria-label="Confirm Button" type="submit" onclick="dontSubmit(event)">Confirm</button>
       </form>
 
       <div class="thank-you-div hidden" id="thank-you">
@@ -70,7 +70,7 @@
       </div>
     </section>
   </main>
-  
+  <script src="script.js"></script>
 </body>
 
 </html>
