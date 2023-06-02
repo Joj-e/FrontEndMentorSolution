@@ -1,11 +1,23 @@
-function dontSubmit(event) {
-    event.preventDefault();
+    function dontSubmit(event) {
 
-    inputName();
-    inputNumber();
-    yearMonthDisplay();
-    inputCVC();
-}
+        const validName = inputName();
+        const validNumber = inputNumber();
+        const validDate = yearMonthDisplay();
+        const validCVC = inputCVC();
+
+        if(validName && validNumber && validDate && validCVC){
+            const form = document.querySelector('form');
+            const congrat = document.querySelector('.thank-you-div');
+
+            form.style.display = 'none';
+            congrat.classList.remove('hidden');
+        } else{
+            event.preventDefault();
+        }
+    }
+
+const submitButton = document.getElementById('sub-button');
+submitButton.addEventListener('click', dontSubmit);
 
 function inputName() {
     const holderName = document.getElementById('cardholder-name');
@@ -18,7 +30,7 @@ function inputName() {
         error.textContent = "Can't be blank";
         error.classList.add('error-message');
         holderName.classList.add('error');
-        display.textContent = "Jane Appleseed"
+        display.textContent = "Jane Appleseed";
     } else if (/\d/.test(name)) {
         error.textContent = "Wrong format, letters only";
         error.classList.add('error-message');
@@ -34,20 +46,24 @@ function inputName() {
         error.classList.remove('error-message');
         holderName.classList.remove('error');
     }
+    
+    return name !== '' && !/\d/.test(name) && name.length >= 4;
 }
 
-function inputNumber(event) {
-    const cardNumber = event.target;
+function inputNumber() {
+    const cardNumber = document.getElementById('card-number');
     let numberFormat = cardNumber.value.replace(/\s/g, '');
 
     const numberError = document.getElementById('number-error-message');
     const numberDisplay = document.getElementById('card-number-display');
     const number = numberFormat.trim();
 
-    numberFormat = number.replace(/(\d{4}(?=\d))/g, '$1 ');
+    console.log(cardNumber);
+
+    numberFormat = number;
     cardNumber.value = numberFormat;
 
-    numberDisplay.textContent = cardNumber.value;
+    numberDisplay.textContent = cardNumber.value.replace(/(\d{4}(?=\d))/g, '$1 ');
 
 
     if (number === '') {
@@ -72,6 +88,7 @@ function inputNumber(event) {
         numberError.classList.remove('error-message');
         cardNumber.classList.remove('error');
     }
+    return number !== '' && /^[0-9\s]+$/.test(number) && number.length === 16;
 }
 
 function yearMonthDisplay() {
@@ -124,6 +141,8 @@ function yearMonthDisplay() {
         expDateError.classList.remove('error-message');
         monthInput.classList.remove('error');
         yearInput.classList.remove('error');
+
+        return true
     }
 }
 
@@ -152,5 +171,7 @@ function inputCVC() {
         cvcError.textContent = '';
         cvcError.classList.remove('error-message');
         cvc.classList.remove('error');
+
+        return true
     }
 }

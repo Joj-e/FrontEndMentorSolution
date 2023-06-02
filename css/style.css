@@ -163,6 +163,7 @@ form button{
     align-items: center;
     flex-wrap: wrap;
     padding: 7rem;
+    margin: 0 auto;
 }
 
 .form-container .thank-you-div #thank-you-header{

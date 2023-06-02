@@ -40,7 +40,7 @@
         <p id="name-error-message"></p>
         <label for="card-number">Card Number</label>
         <input type="text" id="card-number" class="card-number" name="card-number"
-          placeholder="e.g. 1234 5678 9123 0000" oninput="inputNumber(event)">
+          placeholder="e.g. 1234 5678 9123 0000" oninput="inputNumber()">
         <p id="number-error-message"></p>
         
         <div class="flex">
@@ -60,13 +60,13 @@
             <p id="cvc-error-message"></p>
           </div>
         </div>
-        <button aria-label="Confirm Button" type="submit" onclick="dontSubmit(event)">Confirm</button>
+        <button aria-label="Confirm Button" type="button" onclick="dontSubmit(event)" id="sub-button">Confirm</button>
       </form>
 
       <div class="thank-you-div hidden" id="thank-you">
         <h2 id="thank-you-header">Thank You!</h2>
         <p>We've added your card details</p>
-        <button aria-label="Continue Button" id="continue">Continue</button>
+        <button aria-label="Continue Button" id="continue" type="submit">Continue</button>
       </div>
     </section>
   </main>
