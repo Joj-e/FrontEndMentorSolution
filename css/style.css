@@ -33,9 +33,9 @@ main{
 
 .card-container .front-card-div{
     position: relative;
-    width: 325px;
+    width: 380px;
     height: 300px;
-    top: 100px;
+    top: 60px;
     left: 100px;
     background: url(../images/bg-card-front.png);
     background-repeat: no-repeat;
@@ -73,9 +73,8 @@ main{
 
 .card-container .back-card-div{
     position: relative;
-    width: 325px;
-    height: 300px;
-    top: 20px;
+    width: 380px;
+    height: 325px;
     left: 175px;
     background: url(../images/bg-card-back.png);
     background-repeat: no-repeat;
@@ -86,9 +85,9 @@ main{
 
 .card-container .back-card-div #cvc-display{
     position: absolute;
-    top: 80px;
-    right: 35px;
-    font-size: .8rem;
+    top: 100px;
+    right: 50px;
+    font-size: .9rem;
 }
 
 form{
@@ -214,15 +213,23 @@ form button{
         margin-bottom: 10px;
     }
     .card-container .front-card-div{
-        left: 10px;
-        top: 120px;
+        left: 0px;
+        top: 117px;
+        width: 310px;
         z-index: 1;
+    }
+    .card-container .front-card-div #card-number-display{
+        font-size: 1.2rem;
     }
     .card-container .back-card-div{
         position: absolute;
-        left: 40px;
-        top: 45px;
+        width: 310px;
+        left: 50px;
+        top: 40px;
         z-index: 0;
+    }
+    .card-container .back-card-div #cvc-display{
+        top: 80px;
     }
     form{
         width: 100%;
@@ -282,15 +289,15 @@ form button{
         margin-bottom: 60px;
     }
     .card-container .front-card-div{
-        left: 40px;
+        left: 0;
         top: 150px;
         z-index: 1;
         margin: 0 auto;
     }
     .card-container .back-card-div{
         position: absolute;
-        top: 50px;
-        left: 70px;
+        top: 35px;
+        left: 80px;
         z-index: 0;
     }
     form{
@@ -306,14 +313,19 @@ form button{
     .card-container .front-card-div{
        top: 20px;
        left: 60px;
+       width: 320px;
     }
     .card-container .back-card-div{
         position: absolute;
         top: 230px;
         left: 90px;
+        width: 320px;
+    }
+    .card-container .back-card-div #cvc-display{
+        top: 80px;
     }
     form{
-        max-width: 500px;
+        max-width: 450px;
         width: 100%;
         padding: 0 60px;
         margin: 0 auto;
