@@ -268,7 +268,7 @@ form button{
     }
 }
 
-@media (min-width: 480px) and (max-width: 576px){
+@media (min-width: 480px) and (max-width: 575px){
     body{
         background-image: url(../images/bg-main-mobile.png);
         background-attachment: initial;
@@ -308,26 +308,67 @@ form button{
     }
 }
 
-
-@media (min-width: 768px) and (max-width: 1080px){
+@media (min-width: 576px) and (max-width: 768px){
+    body{
+        background-image: url(../images/bg-main-mobile.png);
+        background-attachment: initial;
+        background-size: 100%;
+        width: 100%;
+    }
+    main{
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        gap: 100px;
+    }
+    .card-container{
+        padding: 0 40px;
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 60px;
+    }
     .card-container .front-card-div{
-       top: 20px;
-       left: 60px;
-       width: 320px;
+        left: 0;
+        top: 190px;
+        z-index: 1;
+        margin: 0 auto;
     }
     .card-container .back-card-div{
         position: absolute;
-        top: 230px;
-        left: 90px;
-        width: 320px;
+        top: 70px;
+        left: 80px;
+        z-index: 0;
     }
+    form{
+        margin: 60px auto;
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1080px){
+    .card-container .front-card-div{
+        width: 320px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .card-container .back-card-div{
+        width: 320px;
+        bottom: 60px;
+        left: 60px;   
+    }
+
     .card-container .back-card-div #cvc-display{
         top: 80px;
     }
+
     form{
-        max-width: 450px;
-        width: 100%;
-        padding: 0 60px;
         margin: 0 auto;
+        width: 100%;
+        max-width: 325px;
     }
 }
+
